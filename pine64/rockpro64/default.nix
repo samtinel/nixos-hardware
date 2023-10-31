@@ -9,7 +9,7 @@
   # control the fan on the rockpro64 like in the NAS case
   hardware.fancontrol = {
     enable = lib.mkDefault true;
-    config = lib.mkDefault (''
+    config = lib.mkDefault ''
       INTERVAL=3
       DEVPATH=hwmon0=devices/virtual/thermal/thermal_zone0 hwmon1=devices/virtual/thermal/thermal_zone1 hwmon3=devices/platform/pwm-fan
       DEVNAME=hwmon0=cpu_thermal hwmon1=gpu_thermal hwmon3=pwmfan
@@ -24,6 +24,6 @@
       MINSTOP=hwmon3/pwm1=30
       MINPWM=hwmon3/pwm1=0
       MAXPWM=hwmon3/pwm1=255
-    '');
+    '';
   };
 }
